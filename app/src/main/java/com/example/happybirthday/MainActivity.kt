@@ -38,11 +38,6 @@ class MainActivity : ComponentActivity() {
         setContent {
             HappyBirthdayTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-//                    GreetingText(
-//                        message = "Happy Birthday Sam!",
-//                        frome = "From Emma",
-//                        modifier = Modifier.padding(innerPadding)
-//                    )
                     GreetingImage(
                         message = stringResource(R.string.happy_birthday_text),
                         frome = stringResource(R.string.signature_text),
@@ -106,7 +101,20 @@ fun GreetingImage(message: String, frome: String, modifier: Modifier = Modifier)
         Column(modifier = modifier.padding(10.dp)) {
             TiaoZhuanButton()
             ToWorkManagerButton()
+            TestButton()
         }
+    }
+}
+
+@Composable
+fun TestButton() {
+    val context = LocalContext.current
+    Button(
+        onClick = {
+            context.startActivity(Intent(context, TestActivity::class.java))
+        }
+    ) {
+        Text(text = "跳转到TestActivity")
     }
 }
 
