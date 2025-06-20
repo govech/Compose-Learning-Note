@@ -1,5 +1,6 @@
 package com.example.happybirthday
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -13,12 +14,15 @@ import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.magnifier
+import androidx.compose.material3.Button
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
@@ -98,9 +102,24 @@ fun GreetingImage(message: String, frome: String, modifier: Modifier = Modifier)
                 .fillMaxSize()
                 .padding(8.dp)
         )
+
+        TiaoZhuanButton()
     }
 }
 
+
+@Composable
+fun TiaoZhuanButton(modifier: Modifier = Modifier) {
+    val context = LocalContext.current
+    Button(
+        onClick = {
+            context.startActivity(Intent(context, ComposeArticleActivity::class.java))
+        },
+        modifier = modifier.padding(20.dp)
+    ) {
+        Text(text = "跳转到目标Activity")
+    }
+}
 
 @Preview(showBackground = true)
 @Composable
