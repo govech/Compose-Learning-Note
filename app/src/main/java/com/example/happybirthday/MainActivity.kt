@@ -103,7 +103,10 @@ fun GreetingImage(message: String, frome: String, modifier: Modifier = Modifier)
                 .padding(8.dp)
         )
 
-        TiaoZhuanButton()
+        Column(modifier = modifier.padding(10.dp)) {
+            TiaoZhuanButton()
+            ToWorkManagerButton()
+        }
     }
 }
 
@@ -113,13 +116,26 @@ fun TiaoZhuanButton(modifier: Modifier = Modifier) {
     val context = LocalContext.current
     Button(
         onClick = {
-            context.startActivity(Intent(context, ComposeArticleActivity::class.java))
-        },
-        modifier = modifier.padding(20.dp)
+            context.startActivity(Intent(context, WorkManageActivity::class.java))
+        }
+
     ) {
-        Text(text = "跳转到目标Activity")
+        Text(text = "跳转到WorkManage")
     }
 }
+
+@Composable
+fun ToWorkManagerButton(modifier: Modifier = Modifier) {
+    val context = LocalContext.current
+    Button(
+        onClick = {
+            context.startActivity(Intent(context, ComposeArticleActivity::class.java))
+        }
+    ) {
+        Text(text = "跳转到目标Compose文章")
+    }
+}
+
 
 @Preview(showBackground = true)
 @Composable
