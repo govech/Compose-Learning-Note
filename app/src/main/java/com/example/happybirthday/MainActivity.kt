@@ -99,74 +99,49 @@ fun GreetingImage(message: String, frome: String, modifier: Modifier = Modifier)
         )
 
         Column(modifier = modifier.padding(10.dp)) {
-            TiaoZhuanButton()
-            ToWorkManagerButton()
-            TestButton()
-            ToCardButton()
-            ToDiceRoller()
+            NavigationButton(
+                targetActivity = WorkManageActivity::class.java,
+                buttonText = "跳转到WorkManage"
+            )
+            NavigationButton(
+                targetActivity = ComposeArticleActivity::class.java,
+                buttonText = "跳转到目标Compose文章"
+            )
+            NavigationButton(
+                targetActivity = TestActivity::class.java,
+                buttonText = "跳转到TestActivity"
+            )
+            NavigationButton(
+                targetActivity = CardActivity::class.java,
+                buttonText = "跳转到目标Card页面"
+            )
+            NavigationButton(
+                targetActivity = DiceRollerActivity::class.java,
+                buttonText = "跳转到DiceRoller"
+            )
+            NavigationButton(
+                targetActivity = TipTimeActivity::class.java,
+                buttonText = "跳转到TipTime"
+            )
         }
     }
 }
 
+
 @Composable
-fun TestButton() {
+fun NavigationButton(
+    targetActivity: Class<*>,
+    buttonText: String,
+    modifier: Modifier = Modifier
+) {
     val context = LocalContext.current
     Button(
         onClick = {
-            context.startActivity(Intent(context, TestActivity::class.java))
-        }
+            context.startActivity(Intent(context, targetActivity))
+        },
+        modifier = modifier
     ) {
-        Text(text = "跳转到TestActivity")
-    }
-}
-
-
-@Composable
-fun TiaoZhuanButton(modifier: Modifier = Modifier) {
-    val context = LocalContext.current
-    Button(
-        onClick = {
-            context.startActivity(Intent(context, WorkManageActivity::class.java))
-        }
-
-    ) {
-        Text(text = "跳转到WorkManage")
-    }
-}
-
-@Composable
-fun ToWorkManagerButton(modifier: Modifier = Modifier) {
-    val context = LocalContext.current
-    Button(
-        onClick = {
-            context.startActivity(Intent(context, ComposeArticleActivity::class.java))
-        }
-    ) {
-        Text(text = "跳转到目标Compose文章")
-    }
-}
-
-@Composable
-fun ToCardButton(modifier: Modifier = Modifier) {
-    val context = LocalContext.current
-    Button(
-        onClick = {
-            context.startActivity(Intent(context, CardActivity::class.java))
-        }
-    ) {
-        Text(text = "跳转到Card页面")
-    }
-}
-
-@Composable
-fun ToDiceRoller() {
-    val context = LocalContext.current
-    Button(
-        onClick = {
-            context.startActivity(Intent(context, DiceRollerActivity::class.java))
-        }
-    ) {
-        Text(text = "跳转到DiceRoller")
+        Text(text = buttonText)
     }
 }
 
