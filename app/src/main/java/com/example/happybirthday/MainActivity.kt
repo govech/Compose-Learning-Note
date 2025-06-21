@@ -123,6 +123,10 @@ fun GreetingImage(message: String, frome: String, modifier: Modifier = Modifier)
                 targetActivity = TipTimeActivity::class.java,
                 buttonText = "跳转到TipTime"
             )
+            NavigationButton(
+                targetActivity = AffirmationsActivity::class.java,
+                buttonText = "跳转到Affirmations"
+            )
         }
     }
 }
