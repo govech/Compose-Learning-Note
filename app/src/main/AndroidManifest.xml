@@ -25,7 +25,8 @@
         </activity>
         <activity android:name=".ComposeArticleActivity" />
         <activity android:name=".WorkManageActivity" />
-        <activity android:name=".TestActivity"/>
+        <activity android:name=".TestActivity" />
+        <activity android:name=".CardActivity" />
     </application>
 
 </manifest>

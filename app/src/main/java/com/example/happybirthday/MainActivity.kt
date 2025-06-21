@@ -102,6 +102,7 @@ fun GreetingImage(message: String, frome: String, modifier: Modifier = Modifier)
             TiaoZhuanButton()
             ToWorkManagerButton()
             TestButton()
+            ToCardButton()
         }
     }
 }
@@ -143,6 +144,19 @@ fun ToWorkManagerButton(modifier: Modifier = Modifier) {
         Text(text = "跳转到目标Compose文章")
     }
 }
+
+@Composable
+fun ToCardButton(modifier: Modifier = Modifier) {
+    val context = LocalContext.current
+    Button(
+        onClick = {
+            context.startActivity(Intent(context, CardActivity::class.java))
+        }
+    ) {
+        Text(text = "跳转到Card页面")
+    }
+}
+
 
 
 @Preview(showBackground = true)
