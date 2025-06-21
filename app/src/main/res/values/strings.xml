@@ -2,4 +2,6 @@
     <string name="app_name">Happy Birthday</string>
     <string name="happy_birthday_text">Happy Birthday Sam!</string>
     <string name="signature_text">From Emma</string>
+    <string name="title_activity_dice_roller">DiceRollerActivity</string>
+    <string name="roll">Roll</string>
 </resources>

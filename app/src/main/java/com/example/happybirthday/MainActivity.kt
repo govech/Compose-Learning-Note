@@ -103,6 +103,7 @@ fun GreetingImage(message: String, frome: String, modifier: Modifier = Modifier)
             ToWorkManagerButton()
             TestButton()
             ToCardButton()
+            ToDiceRoller()
         }
     }
 }
@@ -157,6 +158,17 @@ fun ToCardButton(modifier: Modifier = Modifier) {
     }
 }
 
+@Composable
+fun ToDiceRoller() {
+    val context = LocalContext.current
+    Button(
+        onClick = {
+            context.startActivity(Intent(context, DiceRollerActivity::class.java))
+        }
+    ) {
+        Text(text = "跳转到DiceRoller")
+    }
+}
 
 
 @Preview(showBackground = true)
