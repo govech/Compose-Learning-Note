@@ -127,6 +127,10 @@ fun GreetingImage(message: String, frome: String, modifier: Modifier = Modifier)
                 targetActivity = AffirmationsActivity::class.java,
                 buttonText = "跳转到Affirmations"
             )
+            NavigationButton(
+                targetActivity = TopicListMainActivity::class.java,
+                buttonText = "跳转到TopicListMainActivity"
+            )
         }
     }
 }
