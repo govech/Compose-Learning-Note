@@ -9,12 +9,10 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.magnifier
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.Button
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
@@ -98,40 +96,8 @@ fun GreetingImage(message: String, frome: String, modifier: Modifier = Modifier)
                 .padding(8.dp)
         )
 
-        Column(modifier = modifier.padding(10.dp)) {
-            NavigationButton(
-                targetActivity = WorkManageActivity::class.java,
-                buttonText = "跳转到WorkManage"
-            )
-            NavigationButton(
-                targetActivity = ComposeArticleActivity::class.java,
-                buttonText = "跳转到目标Compose文章"
-            )
-            NavigationButton(
-                targetActivity = TestActivity::class.java,
-                buttonText = "跳转到TestActivity"
-            )
-            NavigationButton(
-                targetActivity = CardActivity::class.java,
-                buttonText = "跳转到目标Card页面"
-            )
-            NavigationButton(
-                targetActivity = DiceRollerActivity::class.java,
-                buttonText = "跳转到DiceRoller"
-            )
-            NavigationButton(
-                targetActivity = TipTimeActivity::class.java,
-                buttonText = "跳转到TipTime"
-            )
-            NavigationButton(
-                targetActivity = AffirmationsActivity::class.java,
-                buttonText = "跳转到Affirmations"
-            )
-            NavigationButton(
-                targetActivity = TopicListMainActivity::class.java,
-                buttonText = "跳转到TopicListMainActivity"
-            )
-        }
+        NavigationList()
+
     }
 }
 
@@ -152,6 +118,37 @@ fun NavigationButton(
         Text(text = buttonText)
     }
 }
+
+
+data class NavigationItem(
+    val title: String,
+    val targetActivity: Class<*>
+)
+
+@Composable
+fun NavigationList(modifier: Modifier = Modifier) {
+    val itemsNavigation = listOf(
+        NavigationItem("跳转到WorkManage", WorkManageActivity::class.java),
+        NavigationItem("跳转到目标Compose文章", ComposeArticleActivity::class.java),
+        NavigationItem("跳转到TestActivity", TestActivity::class.java),
+        NavigationItem("跳转到目标Card页面", CardActivity::class.java),
+        NavigationItem("跳转到DiceRoller", DiceRollerActivity::class.java),
+        NavigationItem("跳转到TipTime", TipTimeActivity::class.java),
+        NavigationItem("跳转到Affirmations", AffirmationsActivity::class.java),
+        NavigationItem("跳转到TopicListMainActivity", TopicListMainActivity::class.java),
+        NavigationItem("跳转到WoofActivity", WoofActivity::class.java)
+    )
+    LazyColumn(modifier = modifier) {
+        items(itemsNavigation) { item ->
+            NavigationButton(
+                targetActivity = item.targetActivity,
+                buttonText = item.title
+            )
+        }
+    }
+
+}
+
 
 
 @Preview(showBackground = true)
