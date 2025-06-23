@@ -20,7 +20,6 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.Card
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -34,6 +33,7 @@ import androidx.compose.ui.unit.dp
 import com.example.happybirthday.data.Datasource
 import com.example.happybirthday.model.Affirmation
 import com.example.happybirthday.ui.theme.HappyBirthdayTheme
+import com.example.happybirthday.utils.clickScale
 
 class AffirmationsActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -49,7 +49,10 @@ class AffirmationsActivity : ComponentActivity() {
 
 @Composable
 fun AffirmationCard(affirmation: Affirmation, modifier: Modifier = Modifier) {
-    Card(modifier = modifier) {
+    Card(
+        modifier = modifier
+            .clickScale { }
+    ) {
         Column {
             Image(
                 painter = painterResource(affirmation.imageResourceId),
