@@ -70,11 +70,11 @@ fun DogInformation(dog: Dog, modifier: Modifier = Modifier) {
     Column {
         Text(
             text = stringResource(dog.name),
-            modifier = modifier.padding(start = 8.dp)
+            style = MaterialTheme.typography.displayLarge,
         )
         Text(
             text = "${dog.age} years old",
-            modifier = modifier.padding(start = 8.dp)
+            style = MaterialTheme.typography.bodyLarge,
         )
     }
 }
@@ -115,10 +115,3 @@ fun GreetingPreview2() {
     }
 }
 
-@Preview
-@Composable
-fun WoofDarkThemePreview() {
-    HappyBirthdayTheme(darkTheme = true) {
-        WoofApp()
-    }
-}
