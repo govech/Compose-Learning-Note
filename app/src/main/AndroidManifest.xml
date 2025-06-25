@@ -13,6 +13,11 @@
         android:theme="@style/Theme.HappyBirthday"
         tools:targetApi="31">
         <activity
+            android:name=".game.WordGameActivity"
+            android:exported="false"
+            android:label="@string/title_activity_word_game"
+            android:theme="@style/Theme.HappyBirthday" />
+        <activity
             android:name=".WoofActivity"
             android:exported="false"
             android:label="@string/title_activity_woof"

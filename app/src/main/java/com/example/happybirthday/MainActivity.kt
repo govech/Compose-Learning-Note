@@ -28,6 +28,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.happybirthday.game.WordGameActivity
 import com.example.happybirthday.ui.theme.HappyBirthdayTheme
 
 class MainActivity : ComponentActivity() {
@@ -137,7 +138,8 @@ fun NavigationList(modifier: Modifier = Modifier) {
         NavigationItem("跳转到TipTime", TipTimeActivity::class.java),
         NavigationItem("跳转到Affirmations", AffirmationsActivity::class.java),
         NavigationItem("跳转到TopicListMainActivity", TopicListMainActivity::class.java),
-        NavigationItem("跳转到WoofActivity", WoofActivity::class.java)
+        NavigationItem("跳转到WoofActivity", WoofActivity::class.java),
+        NavigationItem("跳转到WordGameActivity", WordGameActivity::class.java),
     )
     LazyColumn(modifier = modifier) {
         items(itemsNavigation) { item ->
