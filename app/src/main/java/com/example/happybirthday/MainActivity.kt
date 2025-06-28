@@ -38,6 +38,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.happybirthday.component.Ruler
 import com.example.happybirthday.game.WordGameActivity
+import com.example.happybirthday.marsphoto.MarsActivity
 import com.example.happybirthday.ui.theme.HappyBirthdayTheme
 
 class MainActivity : ComponentActivity() {
@@ -157,6 +158,7 @@ fun NavigationList(modifier: Modifier = Modifier) {
         NavigationItem("跳转到TopicListMainActivity", TopicListMainActivity::class.java),
         NavigationItem("跳转到WoofActivity", WoofActivity::class.java),
         NavigationItem("跳转到WordGameActivity", WordGameActivity::class.java),
+        NavigationItem("跳转到MarsActivity", MarsActivity::class.java),
     )
     LazyColumn(modifier = modifier) {
         items(itemsNavigation) { item ->
