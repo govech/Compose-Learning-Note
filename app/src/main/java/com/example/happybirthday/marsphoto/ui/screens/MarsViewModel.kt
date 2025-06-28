@@ -48,8 +48,8 @@ class MarsViewModel(private val marsPhotosRepository: MarsPhotosRepository) : Vi
     private fun getMarsPhotos() {
         viewModelScope.launch {
             marsUiState = try {
-                val listResult = marsPhotosRepository.getMarsPhotos()
-                MarsUiState.Success("Success: ${listResult.size} Mars photos retrieved")
+                val listResult = marsPhotosRepository.getMarsPhotos()[0]
+                MarsUiState.Success(listResult)
             } catch (e: Exception) {
                 Log.e("MarsViewModel", "获取图片失败: $e")
                 MarsUiState.Error
