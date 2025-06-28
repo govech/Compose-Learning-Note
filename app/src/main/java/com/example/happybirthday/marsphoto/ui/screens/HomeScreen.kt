@@ -34,7 +34,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.happybirthday.R
 import com.example.happybirthday.marsphoto.ui.theme.HappyBirthdayTheme
-import com.example.marsphotos.network.MarsUiState
+import com.example.happybirthday.marsphoto.data.MarsUiState
 
 
 @Composable

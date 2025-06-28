@@ -1,4 +1,4 @@
-package com.example.marsphotos.network
+package com.example.happybirthday.marsphoto.data
 
 // No need to copy over
 sealed interface MarsUiState {

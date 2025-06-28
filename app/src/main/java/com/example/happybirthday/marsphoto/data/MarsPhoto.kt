@@ -1,4 +1,4 @@
-package com.example.marsphotos.network
+package com.example.happybirthday.marsphoto.data
 
 import com.google.gson.annotations.SerializedName
 
